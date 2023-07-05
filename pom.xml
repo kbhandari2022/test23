@@ -5,6 +5,7 @@
 <artifactId>hadoop-project</artifactId>
 <version>3.1.0</version>
 <relativePath>../../hadoop-project</relativePath>
+  
 </parent>
 <artifactId>hadoop-azure</artifactId>
 <name>Apache Hadoop Azure support</name>
