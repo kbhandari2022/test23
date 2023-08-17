@@ -29,7 +29,7 @@
 	<properties>
 		<activemq.version>5.18.2</activemq.version>
 		<angus-mail.version>1.1.0</angus-mail.version>
-		<artemis.version>2.28.0</artemis.version>
+		<artemis.version>2.30.0</artemis.version>
 		<aspectj.version>1.9.19</aspectj.version>
 		<assertj.version>3.24.2</assertj.version>
 		<awaitility.version>4.2.0</awaitility.version>
@@ -38,7 +38,7 @@
 		<byte-buddy.version>1.14.5</byte-buddy.version>
 		<cache2k.version>2.6.1.Final</cache2k.version>
 		<caffeine.version>3.1.6</caffeine.version>
-		<cassandra-driver.version>4.15.0</cassandra-driver.version>
+		<cassandra-driver.version>4.17.0</cassandra-driver.version>
 		<classmate.version>1.5.1</classmate.version>
 		<commons-codec.version>1.15</commons-codec.version>
 		<commons-dbcp2.version>2.9.0</commons-dbcp2.version>
@@ -52,7 +52,7 @@
 		<dropwizard-metrics.version>4.2.19</dropwizard-metrics.version>
 		<ehcache3.version>3.10.8</ehcache3.version>
 		<elasticsearch-client.version>8.7.1</elasticsearch-client.version>
-		<flyway.version>9.16.3</flyway.version>
+		<flyway.version>9.19.0</flyway.version>
 		<freemarker.version>2.3.32</freemarker.version>
 		<git-commit-id-maven-plugin.version>5.0.1</git-commit-id-maven-plugin.version>
 		<glassfish-jaxb.version>4.0.3</glassfish-jaxb.version>
@@ -62,7 +62,7 @@
 		<gson.version>2.10.1</gson.version>
 		<h2.version>2.1.214</h2.version>
 		<hamcrest.version>2.2</hamcrest.version>
-		<hazelcast.version>5.2.4</hazelcast.version>
+		<hazelcast.version>5.3.0</hazelcast.version>
 		<hibernate.version>6.2.6.Final</hibernate.version>
 		<hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
 		<hikaricp.version>5.0.1</hikaricp.version>
@@ -99,7 +99,7 @@
 		<jaybird.version>5.0.2.java11</jaybird.version>
 		<jboss-logging.version>3.5.3.Final</jboss-logging.version>
 		<jdom2.version>2.0.6.1</jdom2.version>
-		<jedis.version>4.3.2</jedis.version>
+		<jedis.version>jedis-3.6.2</jedis.version>
 		<jersey.version>3.1.2</jersey.version>
 		<jetty-reactive-httpclient.version>3.0.8</jetty-reactive-httpclient.version>
 		<jetty.version>11.0.15</jetty.version>
@@ -111,11 +111,11 @@
 		<jtds.version>1.3.1</jtds.version>
 		<junit.version>4.13.2</junit.version>
 		<junit-jupiter.version>5.9.3</junit-jupiter.version>
-		<kafka.version>3.4.1</kafka.version>
+		<kafka.version>3.5.1</kafka.version>
 		<kotlin.version>1.8.22</kotlin.version>
 		<kotlin-coroutines.version>1.6.4</kotlin-coroutines.version>
 		<lettuce.version>6.2.5.RELEASE</lettuce.version>
-		<liquibase.version>4.20.0</liquibase.version>
+		<liquibase.version>4.21.0</liquibase.version>
 		<log4j2.version>2.20.0</log4j2.version>
 		<logback.version>1.4.8</logback.version>
 		<lombok.version>1.18.28</lombok.version>
@@ -146,7 +146,7 @@
 		<mysql.version>8.0.33</mysql.version>
 		<native-build-tools-plugin.version>0.9.23</native-build-tools-plugin.version>
 		<nekohtml.version>1.9.22</nekohtml.version>
-		<neo4j-java-driver.version>5.9.0</neo4j-java-driver.version>
+		<neo4j-java-driver.version>5.10.0</neo4j-java-driver.version>
 		<netty.version>4.1.94.Final</netty.version>
 		<okhttp.version>4.10.0</okhttp.version>
 		<opentelemetry.version>1.25.0</opentelemetry.version>
@@ -166,7 +166,7 @@
 		<r2dbc-proxy.version>1.1.1.RELEASE</r2dbc-proxy.version>
 		<r2dbc-spi.version>1.0.0.RELEASE</r2dbc-spi.version>
 		<rabbit-amqp-client.version>5.17.1</rabbit-amqp-client.version>
-		<rabbit-stream-client.version>0.9.0</rabbit-stream-client.version>
+		<rabbit-stream-client.version>0.11.0</rabbit-stream-client.version>
 		<reactive-streams.version>1.0.4</reactive-streams.version>
 		<reactor-bom.version>2022.0.9</reactor-bom.version>
 		<rest-assured.version>5.3.1</rest-assured.version>
@@ -174,10 +174,10 @@
 		<rxjava3.version>3.1.6</rxjava3.version>
 		<saaj-impl.version>3.0.2</saaj-impl.version>
 		<selenium.version>4.8.3</selenium.version>
-		<selenium-htmlunit.version>4.8.3</selenium-htmlunit.version>
+		<selenium-htmlunit.version>4.11.0</selenium-htmlunit.version>
 		<sendgrid.version>4.9.3</sendgrid.version>
 		<slf4j.version>2.0.7</slf4j.version>
-		<snakeyaml.version>1.33</snakeyaml.version>
+		<snakeyaml.version>2.0</snakeyaml.version>
 		<spring-amqp.version>3.0.6</spring-amqp.version>
 		<spring-authorization-server.version>1.1.1</spring-authorization-server.version>
 		<spring-batch.version>5.0.2</spring-batch.version>
@@ -195,7 +195,7 @@
 		<spring-ws.version>4.0.5</spring-ws.version>
 		<sqlite-jdbc.version>3.41.2.2</sqlite-jdbc.version>
 		<testcontainers.version>1.18.3</testcontainers.version>
-		<thymeleaf.version>3.1.1.RELEASE</thymeleaf.version>
+		<thymeleaf.version>3.1.2.RELEASE</thymeleaf.version>
 		<thymeleaf-extras-data-attribute.version>2.0.1</thymeleaf-extras-data-attribute.version>
 		<thymeleaf-extras-springsecurity.version>3.1.1.RELEASE</thymeleaf-extras-springsecurity.version>
 		<thymeleaf-layout-dialect.version>3.2.1</thymeleaf-layout-dialect.version>
