@@ -1,32 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>secone</groupId>
-    <artifactId>child</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>secone</groupId>
+	<artifactId>child</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 
-  <properties>
-    <sikulixvmaj>2</sikulixvmaj>
-    <sikulixvmin>13</sikulixvmin>
-    <sikulixvsub>1</sikulixvsub>
-    <sikuli.usedversion>${sikulixvmaj}.${sikulixvmin}.${sikulixvsub}</sikuli.usedversion>
-    
-  </properties>
-  
-    <dependencies>
-        <dependency>
-            <groupId>org.yaml</groupId>
-            <artifactId>snakeyaml</artifactId>
-            <version>1.22</version>
-        </dependency>
+	<properties>
+		<sikulixvmaj>5</sikulixvmaj>
+		<sikulixvmin>1</sikulixvmin>
+		<sikulixvsub>19</sikulixvsub>
+		<sikuli.usedversion>${sikulixvmaj}.${sikulixvmin}.${sikulixvsub}.RELEASE</sikuli.usedversion>
 
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>${sikuli.usedversion}</version>
-          </dependency>
-    </dependencies>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+			<version>1.22</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.13.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			
+		</dependency>
+
+
+	</dependencies>
 
 </project>
