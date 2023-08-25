@@ -59,7 +59,7 @@
 		<glassfish-jstl.version>3.0.1</glassfish-jstl.version>
 		<graphql-java.version>20.2</graphql-java.version>
 		<groovy.version>4.0.13</groovy.version>
-		<gson.version>2.10.1</gson.version>
+		<gson.version>2.10.1rt123</gson.version>
 		<h2.version>2.1.214</h2.version>
 		<hamcrest.version>2.2</hamcrest.version>
 		<hazelcast.version>5.2.4</hazelcast.version>
