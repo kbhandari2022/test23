@@ -179,7 +179,7 @@
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-swing</artifactId>
 			<version>${camel-version}</version>
-			<scope>test</scope>
+			<scope>compile</scope>
 		</dependency>
 		<!--  database testing  -->
 		<dependency>
@@ -473,8 +473,6 @@
 									file="${basedir}/src/main/resources/activemq.xsd"
 									out="${basedir}/target/site/xsddoc"
 									doctitle="Apache ActiveMQ XML Schema Reference"
-									header="<a href='http://activemq.apache.org/'>Apache ActiveMQ</a>"
-									footer="Copyright 2007 (c) the <a href='http://www.apache.org/'>Apache Software Foundation</a>"
 									verbose="false" />
 								<!-- 
                         css="${basedir}/../etc/css/stylesheet.css"
