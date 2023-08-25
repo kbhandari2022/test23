@@ -231,7 +231,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-blueprint</artifactId>
+			<artifactId>activemq-blueprint123</artifactId>
 			<version>${activemq.version}</version>
 		</dependency>
 		<dependency>
