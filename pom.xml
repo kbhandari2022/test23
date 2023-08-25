@@ -116,22 +116,22 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<scope>test</scope>
+			
 		</dependency>
 		<dependency>
 			<groupId>org.hamcrest</groupId>
 			<artifactId>hamcrest-all</artifactId>
-			<scope>test</scope>
+			
 		</dependency>
 		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
-			<scope>test</scope>
+			
 		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
-			<scope>test</scope>
+			
 		</dependency>
 		<dependency>
 			<groupId>${pom.groupId}</groupId>
@@ -143,64 +143,58 @@
 			<groupId>org.codehaus.jettison</groupId>
 			<artifactId>jettison</artifactId>
 			<version>1.0</version>
-			<scope>test</scope>
+			
 		</dependency>
 		<dependency>
 			<groupId>stax</groupId>
 			<artifactId>stax-api</artifactId>
 			<version>1.0.1</version>
-			<scope>test</scope>
+			
 		</dependency>
 		<!--  testing camel helpers  -->
 		<dependency>
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-core</artifactId>
 			<type>test-jar</type>
-			<scope>test</scope>
+			
 		</dependency>
 		<dependency>
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-spring</artifactId>
 			<type>test-jar</type>
-			<scope>test</scope>
+			
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<scope>test</scope>
+			
 		</dependency>
 		<dependency>
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>activemq-jmdns_1.0</artifactId>
 			<optional>true</optional>
 		</dependency>
-		<!--  Camel UI testing  -->
-		<dependency>
-			<groupId>org.apache.camel</groupId>
-			<artifactId>camel-swing</artifactId>
-			<version>${camel-version}</version>
-			<scope>compile</scope>
-		</dependency>
+		
 		<!--  database testing  -->
 		<dependency>
 			<groupId>commons-collections</groupId>
 			<artifactId>commons-collections</artifactId>
-			<scope>test</scope>
+			
 		</dependency>
 		<dependency>
 			<groupId>commons-primitives</groupId>
 			<artifactId>commons-primitives</artifactId>
-			<scope>test</scope>
+			
 		</dependency>
 		<dependency>
 			<groupId>axion</groupId>
 			<artifactId>axion</artifactId>
-			<scope>test</scope>
+			
 		</dependency>
 		<dependency>
 			<groupId>regexp</groupId>
 			<artifactId>regexp</artifactId>
-			<scope>test</scope>
+			
 		</dependency>
 		<!--   LDAP tests  -->
 		<dependency>
@@ -208,13 +202,13 @@
 			<artifactId>apacheds-core</artifactId>
 			<version>1.0.0</version>
 			<!-- <version>1.0-RC3</version> -->
-			<scope>test</scope>
+			
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>nlog4j</artifactId>
 			<version>1.2.24</version>
-			<scope>test</scope>
+			
 		</dependency>
 	</dependencies>
 	<reporting>
