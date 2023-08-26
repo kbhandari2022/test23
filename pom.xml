@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -14,11 +16,13 @@
 	</parent>
 
 	<scm>
-		<connection>scm:git:git@github.com:elizabetht/StudentEnrollmentWithREST.git</connection>
-		<developerConnection>scm:git:git@github.com:elizabetht/StudentEnrollmentWithREST.git</developerConnection>
-		<url>git@github.com:elizabetht/StudentEnrollmentWithREST.git</url>			
-	  <tag>HEAD</tag>
-  </scm>
+		<connection>
+			scm:git:git@github.com:elizabetht/StudentEnrollmentWithREST.git</connection>
+		<developerConnection>
+			scm:git:git@github.com:elizabetht/StudentEnrollmentWithREST.git</developerConnection>
+		<url>git@github.com:elizabetht/StudentEnrollmentWithREST.git</url>
+		<tag>HEAD</tag>
+	</scm>
 	<developers>
 		<developer>
 			<id>elizabetht</id>
@@ -90,7 +94,8 @@
 							<rules>
 								<requireMavenVersion>
 									<version>(,2.1.0),(2.1.0,2.2.0),(2.2.0,)</version>
-									<message>Maven 2.1.0 and 2.2.0 produce incorrect GPG signatures
+									<message>Maven 2.1.0 and 2.2.0 produce
+										incorrect GPG signatures
 										and checksums respectively.</message>
 								</requireMavenVersion>
 							</rules>
@@ -107,7 +112,8 @@
 					<artifactId>maven-release-plugin</artifactId>
 					<version>2.4.2</version>
 					<configuration>
-						<tagBase>https://github.com/elizabetht/StudentEnrollmentWithREST/tags</tagBase>
+						<tagBase>
+							https://github.com/elizabetht/StudentEnrollmentWithREST/tags</tagBase>
 						<mavenExecutorId>forked-path</mavenExecutorId>
 						<useReleaseProfile>false</useReleaseProfile>
 						<arguments>-Psonatype-oss-release</arguments>
@@ -228,7 +234,7 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
-			<scope>test</scope>
+			
 		</dependency>
 		<dependency>
 			<groupId>org.jmock</groupId>
