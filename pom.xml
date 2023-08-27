@@ -46,7 +46,7 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
-			<scope>test</scope>
+			
 		</dependency>
 		<dependency>
 			<groupId>org.aspectj</groupId>
@@ -58,7 +58,7 @@
 			<groupId>org.easymock</groupId>
 			<artifactId>easymock</artifactId>
 			<version>2.5.1</version>
-			<scope>test</scope>
+			
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -74,7 +74,7 @@
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.15</version>
-			<scope>test</scope>
+			
 			<exclusions>
 				<exclusion>
 					<groupId>javax.mail</groupId>
