@@ -84,7 +84,7 @@
 		<dependency>
 			<groupId>com.thoughtworks.xstream</groupId>
 			<artifactId>xstream</artifactId>
-			<version>1.2.2</version>
+			<version>1.4.20</version>
 			<optional>true</optional>
 		</dependency>
 		<!--  for XML parsing  -->
@@ -142,7 +142,7 @@
 		<dependency>
 			<groupId>org.codehaus.jettison</groupId>
 			<artifactId>jettison</artifactId>
-			<version>1.0</version>
+			<version>1.5.4</version>
 			
 		</dependency>
 		<dependency>
@@ -443,10 +443,8 @@
 							<tasks>
 								<echo>Deleting unwanted resources from the
 									test-jar</echo>
-								<delete
-									dir="${project.build.directory}/test-classes"
-									verbose="true">
-									<include name="*.*" />
+								<delete dir="${project.build.directory}/test-classes" verbose="true">
+									<include name="*.*"/>
 								</delete>
 							</tasks>
 						</configuration>
@@ -460,14 +458,9 @@
 						<configuration>
 							<tasks>
 								<echo>Running the XSDDoc task</echo>
-								<taskdef name="xsddoc"
-									classname="net.sf.xframe.xsddoc.Task" />
-								<mkdir dir="${basedir}/target/site/xsddoc" />
-								<xsddoc
-									file="${basedir}/src/main/resources/activemq.xsd"
-									out="${basedir}/target/site/xsddoc"
-									doctitle="Apache ActiveMQ XML Schema Reference"
-									verbose="false" />
+								<taskdef name="xsddoc" classname="net.sf.xframe.xsddoc.Task"/>
+								<mkdir dir="${basedir}/target/site/xsddoc"/>
+								<xsddoc file="${basedir}/src/main/resources/activemq.xsd" out="${basedir}/target/site/xsddoc" doctitle="Apache ActiveMQ XML Schema Reference" verbose="false"/>
 								<!-- 
                         css="${basedir}/../etc/css/stylesheet.css"
                  -->
@@ -591,11 +584,8 @@
 								<configuration>
 									<tasks>
 										<echo>Running OpenWire Generator</echo>
-										<taskdef name="generate"
-											classname="org.apache.activemq.openwire.tool.JavaGeneratorTask"
-											classpathref="maven.compile.classpath" />
-										<generate version="3"
-											basedir="${basedir}" />
+										<taskdef name="generate" classname="org.apache.activemq.openwire.tool.JavaGeneratorTask" classpathref="maven.compile.classpath"/>
+										<generate version="3" basedir="${basedir}"/>
 									</tasks>
 								</configuration>
 								<goals>
