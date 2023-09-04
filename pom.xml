@@ -7,13 +7,7 @@
 	<artifactId>child</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 
-	<properties>
-		<sikulixvmaj>5</sikulixvmaj>
-		<sikulixvmin>1</sikulixvmin>
-		<sikulixvsub>19</sikulixvsub>
-		<sikuli.usedversion>${sikulixvmaj}.${sikulixvmin}.${sikulixvsub}.RELEASE</sikuli.usedversion>
-		<project.parent.version>${project.version}</project.parent.version>
-	</properties>
+	
 
 	<dependencyManagement>
 		<dependencies>
@@ -44,7 +38,6 @@
 		<dependency>
 			<groupId>org.yaml</groupId>
 			<artifactId>snakeyaml</artifactId>
-			<version>${sikuli.usedversion1}</version>
 		</dependency>
 
 		<dependency>
