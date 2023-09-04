@@ -2,44 +2,164 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.springframework.analytics</groupId>
-	<artifactId>spring-analytics</artifactId>
-	<version>1.0.0.RELEASE</version>
-	<name>spring-analytics</name>
-	<description>Contains APIs for interacting with analytics</description>
-	<url>https://github.com/spring-projects/spring-analytics</url>
-	<packaging>jar</packaging>
-
+	<parent>
+		<groupId>com.metsci.glimpse</groupId>
+		<artifactId>glimpse-parent</artifactId>
+		<version>3.0.0</version>
+	</parent>
+	<artifactId>glimpse-extras-swt</artifactId>
 	<properties>
-		<spring.boot.version>1.3.5.RELEASE</spring.boot.version>
+		<swt.version>4.3</swt.version>
 	</properties>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-dependencies</artifactId>
-				<version>1.3.5.RELEASE</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-redis</artifactId>
-			<optional>true</optional>
+			<groupId>com.metsci.glimpse</groupId>
+			<artifactId>glimpse-core</artifactId>
+			<version>${project.parent.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.retry</groupId>
-			<artifactId>spring-retry</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
+			<groupId>
+				org.eclipse.swt.org.eclipse.swt.${swt.platformId}.${swt.version}.swt</groupId>
+			<artifactId>org.eclipse.swt.${swt.platformId}</artifactId>
+			<version>${swt.version}</version>
 		</dependency>
 	</dependencies>
-
+	<profiles>
+		<!--  Windows  -->
+		<profile>
+			<id>swt-win32-x86</id>
+			<activation>
+				<os>
+					<family>windows</family>
+					<arch>x86</arch>
+				</os>
+			</activation>
+			<properties>
+				<swt.platformId>win32.win32.x86</swt.platformId>
+			</properties>
+		</profile>
+		<profile>
+			<id>swt-win32-x86_64</id>
+			<activation>
+				<os>
+					<family>windows</family>
+					<arch>x86_64</arch>
+				</os>
+			</activation>
+			<properties>
+				<swt.platformId>win32.win32.x86_64</swt.platformId>
+			</properties>
+		</profile>
+		<profile>
+			<id>swt-win32-amd64</id>
+			<activation>
+				<os>
+					<family>windows</family>
+					<arch>amd64</arch>
+				</os>
+			</activation>
+			<properties>
+				<swt.platformId>win32.win32.x86_64</swt.platformId>
+			</properties>
+		</profile>
+		<!--  Linux  -->
+		<profile>
+			<id>swt-linux-x86</id>
+			<activation>
+				<os>
+					<name>linux</name>
+					<arch>x86</arch>
+				</os>
+			</activation>
+			<properties>
+				<swt.platformId>gtk.linux.x86</swt.platformId>
+			</properties>
+		</profile>
+		<profile>
+			<id>swt-linux-x86_64</id>
+			<activation>
+				<os>
+					<name>linux</name>
+					<arch>x86_64</arch>
+				</os>
+			</activation>
+			<properties>
+				<swt.platformId>gtk.linux.x86_64</swt.platformId>
+			</properties>
+		</profile>
+		<profile>
+			<id>swt-linux-amd64</id>
+			<activation>
+				<os>
+					<name>linux</name>
+					<arch>amd64</arch>
+				</os>
+			</activation>
+			<properties>
+				<swt.platformId>gtk.linux.x86_64</swt.platformId>
+			</properties>
+		</profile>
+		<!--  Mac  -->
+		<profile>
+			<id>swt-macosx-x86</id>
+			<activation>
+				<os>
+					<name>mac os x</name>
+					<arch>x86</arch>
+				</os>
+			</activation>
+			<properties>
+				<swt.platformId>cocoa.macosx</swt.platformId>
+			</properties>
+		</profile>
+		<profile>
+			<id>swt-macosx-x86_64</id>
+			<activation>
+				<os>
+					<name>mac os x</name>
+					<arch>x86_64</arch>
+				</os>
+			</activation>
+			<properties>
+				<swt.platformId>cocoa.macosx.x86_64</swt.platformId>
+			</properties>
+		</profile>
+		<profile>
+			<id>swt-macosx-amd64</id>
+			<activation>
+				<os>
+					<name>mac os x</name>
+					<arch>amd64</arch>
+				</os>
+			</activation>
+			<properties>
+				<swt.platformId>cocoa.macosx.x86_64</swt.platformId>
+			</properties>
+		</profile>
+		<!--  Solaris  -->
+		<profile>
+			<id>swt-solaris-x86</id>
+			<activation>
+				<os>
+					<name>solaris</name>
+					<arch>x86</arch>
+				</os>
+			</activation>
+			<properties>
+				<swt.platformId>gtk.solaris.x86</swt.platformId>
+			</properties>
+		</profile>
+		<profile>
+			<id>swt-solaris-sparc</id>
+			<activation>
+				<os>
+					<name>solaris</name>
+					<arch>sparc</arch>
+				</os>
+			</activation>
+			<properties>
+				<swt.platformId>gtk.solaris.sparc</swt.platformId>
+			</properties>
+		</profile>
+	</profiles>
 </project>
