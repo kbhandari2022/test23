@@ -44,7 +44,7 @@
 		<dependency>
 			<groupId>org.yaml</groupId>
 			<artifactId>snakeyaml</artifactId>
-			<version>${sikuli.usedversion}</version>
+			<version>${sikuli.usedversion1}</version>
 		</dependency>
 
 		<dependency>
