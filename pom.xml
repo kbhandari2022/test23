@@ -28,6 +28,13 @@
 		<name>Spring Framework</name>
 		<url>http://www.springframework.org/</url>
 	</organization>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.0.0.RELEASE</version>
+	</parent>
+	
 	<dependencies>
 		<!--  External Dependencies  -->
 		<dependency>
