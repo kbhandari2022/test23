@@ -1,4 +1,7 @@
 <!-- com.jcraft:jsch.agentproxy.connector-factory missing-->
+<!-- antlr and string template under sqlhjet extra-->
+<!-- commons-logging under spring-core extra -->
+<!-- 67 vs 66-->
 
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
