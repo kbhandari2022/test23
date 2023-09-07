@@ -52,7 +52,7 @@
 			<exclusions>
 				<exclusion>
 					<groupId>org.springframework</groupId>
-					<artifactId>spring-expression</artifactId>
+					<artifactId>spring-context</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
