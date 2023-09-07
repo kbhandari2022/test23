@@ -1,72 +1,101 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>spring-cloud-config-server</artifactId>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-web</artifactId>
 	<packaging>jar</packaging>
-	<name>spring-cloud-config-server</name>
-	<description>spring-cloud-config-server</description>
+	<name>Spring Framework: Web</name>
+	<version>2.0</version>
+	<description>Spring Framework: Web</description>
+	<url>http://www.springframework.org</url>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<scm>
+		<connection>
+			scm:cvs:pserver:anonymous:@springframework.cvs.sourceforge.net:/cvsroot/springframework</connection>
+		<developerConnection>
+			scm:cvs:ext:username@springframework.cvs.sourceforge.net:/cvsroot/springframework</developerConnection>
+		<tag>2.0</tag>
+		<url>http://springframework.cvs.sourceforge.net/springframework/</url>
+	</scm>
+	<organization>
+		<name>Spring Framework</name>
+		<url>http://www.springframework.org/</url>
+	</organization>
+
 	<parent>
-		<groupId>org.springframework.cloud</groupId>
-		<artifactId>spring-cloud-config</artifactId>
-		<version>1.0.0.RELEASE</version>
-		<relativePath>..</relativePath>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.0.0</version>
 	</parent>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>5.7.4</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<dependencies>
+		<!--  External Dependencies  -->
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-config-client</artifactId>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.1.1</version>
+			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1</version>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.0</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-crypto</artifactId>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.4</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-rsa</artifactId>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.13</version>
+			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>org.eclipse.jgit</groupId>
-			<artifactId>org.eclipse.jgit</artifactId>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+			<optional>true</optional>
+		</dependency>
+		<!--  Spring Dependencies  -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.yaml</groupId>
-			<artifactId>snakeyaml</artifactId>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			
-		</dependency>
-		<dependency>
-			<groupId>org.tmatesoft.svnkit</groupId>
-			<artifactId>svnkit</artifactId>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>spring-core</artifactId>
 		</dependency>
 	</dependencies>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring-cloud.version>${project.version}</spring-cloud.version>
-		<start-class>
-			org.springframework.cloud.config.server.ConfigServerApplication</start-class>
-		<java.version>1.7</java.version>
-	</properties>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<classifier>exec</classifier>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 </project>
