@@ -39,6 +39,11 @@
 		<dependencies>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>5.7.4</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
 				<artifactId>spring-core</artifactId>
 				<version>5.7.4</version>
 			</dependency>
@@ -93,9 +98,6 @@
 			<artifactId>spring-context</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>spring-core</artifactId>
-		</dependency>
+		
 	</dependencies>
 </project>
