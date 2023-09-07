@@ -1,147 +1,1290 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.apache.hadoop</groupId>
-	<artifactId>hadoop-common</artifactId>
-	<packaging>jar</packaging>
-	<version>0.22.0</version>
-	<dependencies>
-		<dependency>
-			<groupId>commons-cli</groupId>
-			<artifactId>commons-cli</artifactId>
-			<version>1.2</version>
-		</dependency>
-		<dependency>
-			<groupId>xmlenc</groupId>
-			<artifactId>xmlenc</artifactId>
-			<version>0.52</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-codec</groupId>
-			<artifactId>commons-codec</artifactId>
-			<version>1.4</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<version>1.1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>1.6.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.6.1</version>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.16</version>
-		</dependency>
-		<dependency>
-			<groupId>org.mortbay.jetty</groupId>
-			<artifactId>jetty</artifactId>
-			<version>6.1.26</version>
-		</dependency>
-		<dependency>
-			<groupId>tomcat</groupId>
-			<artifactId>jasper-runtime</artifactId>
-			<version>5.5.12</version>
-		</dependency>
-		<dependency>
-			<groupId>tomcat</groupId>
-			<artifactId>jasper-compiler</artifactId>
-			<version>5.5.12</version>
-		</dependency>
-		<dependency>
-			<groupId>org.mortbay.jetty</groupId>
-			<artifactId>jsp-2.1-jetty</artifactId>
-			<version>6.1.26</version>
-			<exclusions>
-				<exclusion>
-					<groupId>ant</groupId>
-					<artifactId>ant</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>commons-el</groupId>
-			<artifactId>commons-el</artifactId>
-			<version>1.0</version>
-		</dependency>
-		<dependency>
-			<groupId>net.java.dev.jets3t</groupId>
-			<artifactId>jets3t</artifactId>
-			<version>0.7.1</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-net</groupId>
-			<artifactId>commons-net</artifactId>
-			<version>1.4.1</version>
-		</dependency>
-		<dependency>
-			<groupId>net.sf.kosmosfs</groupId>
-			<artifactId>kfs</artifactId>
-			<version>0.3</version>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.8.1</version>
-		</dependency>
-		<dependency>
-			<groupId>hsqldb</groupId>
-			<artifactId>hsqldb</artifactId>
-			<version>1.8.0.10</version>
-		</dependency>
-		<dependency>
-			<groupId>oro</groupId>
-			<artifactId>oro</artifactId>
-			<version>2.0.8</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.avro</groupId>
-			<artifactId>avro</artifactId>
-			<version>1.5.3</version>
-			<exclusions>
-				<exclusion>
-					<!--  Don't pull in Avro's version of SLF4J. -->
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-api</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.avro</groupId>
-			<artifactId>avro-ipc</artifactId>
-			<version>1.5.3</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.mortbay.jetty</groupId>
-					<artifactId>jetty</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.apache.tools.ant</groupId>
-					<artifactId>ant</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.jboss.netty</groupId>
-					<artifactId>netty</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.apache.velocity</groupId>
-					<artifactId>velocity</artifactId>
-				</exclusion>
-				<exclusion>
-					<!--  Don't pull in Avro's version of SLF4J. -->
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-api</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-	</dependencies>
-</project>
+{
+    "depFileMetadata": {
+        "pkg:maven/org.apache.hadoop.thirdparty/hadoop-shaded-protobuf_3_7@1.1.1": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": null,
+            "lineNumber": 26
+        },
+        "pkg:maven/org.apache.hadoop/hadoop-annotations@3.3.6": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 30
+        },
+        "pkg:maven/org.apache.hadoop.thirdparty/hadoop-shaded-guava@1.1.1": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": null,
+            "lineNumber": 35
+        },
+        "pkg:maven/com.google.guava/guava@27.0-jre": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 40
+        },
+        "pkg:maven/commons-cli/commons-cli@1.2": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 45
+        },
+        "pkg:maven/org.apache.commons/commons-math3@3.1.1": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 50
+        },
+        "pkg:maven/org.apache.httpcomponents/httpclient@4.5.13": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 55
+        },
+        "pkg:maven/commons-codec/commons-codec@1.15": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 60
+        },
+        "pkg:maven/commons-io/commons-io@2.8.0": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 65
+        },
+        "pkg:maven/commons-net/commons-net@3.9.0": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 70
+        },
+        "pkg:maven/commons-collections/commons-collections@3.2.2": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 75
+        },
+        "pkg:maven/javax.servlet/javax.servlet-api@3.1.0": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 80
+        },
+        "pkg:maven/jakarta.activation/jakarta.activation-api@1.2.1": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "runtime",
+            "lineNumber": 85
+        },
+        "pkg:maven/org.eclipse.jetty/jetty-server@9.4.51.v20230217": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 90
+        },
+        "pkg:maven/org.eclipse.jetty/jetty-util@9.4.51.v20230217": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 95
+        },
+        "pkg:maven/org.eclipse.jetty/jetty-servlet@9.4.51.v20230217": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 100
+        },
+        "pkg:maven/org.eclipse.jetty/jetty-webapp@9.4.51.v20230217": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 105
+        },
+        "pkg:maven/org.eclipse.jetty/jetty-util-ajax@9.4.51.v20230217": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "test",
+            "lineNumber": 110
+        },
+        "pkg:maven/javax.servlet.jsp/jsp-api@2.1": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "runtime",
+            "lineNumber": 115
+        },
+        "pkg:maven/com.sun.jersey/jersey-core@1.19.4": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 120
+        },
+        "pkg:maven/com.sun.jersey/jersey-servlet@1.19.4": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 125
+        },
+        "pkg:maven/com.github.pjfanning/jersey-json@1.20": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 144
+        },
+        "pkg:maven/com.sun.jersey/jersey-server@1.19.4": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 163
+        },
+        "pkg:maven/commons-logging/commons-logging@1.1.3": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 168
+        },
+        "pkg:maven/ch.qos.reload4j/reload4j@1.2.22": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 173
+        },
+        "pkg:maven/junit/junit@4.13.2": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "test",
+            "lineNumber": 178
+        },
+        "pkg:maven/org.assertj/assertj-core@3.12.2": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "test",
+            "lineNumber": 183
+        },
+        "pkg:maven/commons-beanutils/commons-beanutils@1.9.4": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 188
+        },
+        "pkg:maven/org.apache.commons/commons-configuration2@2.8.0": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 193
+        },
+        "pkg:maven/org.apache.commons/commons-lang3@3.12.0": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 198
+        },
+        "pkg:maven/org.apache.commons/commons-text@1.10.0": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 203
+        },
+        "pkg:maven/org.slf4j/slf4j-api@1.7.36": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 208
+        },
+        "pkg:maven/org.slf4j/slf4j-reload4j@1.7.36": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 213
+        },
+        "pkg:maven/org.mockito/mockito-core@2.28.2": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "test",
+            "lineNumber": 218
+        },
+        "pkg:maven/org.apache.avro/avro@1.7.7": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 223
+        },
+        "pkg:maven/org.apache.ant/ant@1.10.13": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "test",
+            "lineNumber": 228
+        },
+        "pkg:maven/com.google.re2j/re2j@1.1": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 233
+        },
+        "pkg:maven/com.google.protobuf/protobuf-java@2.5.0": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 238
+        },
+        "pkg:maven/com.google.code.gson/gson@2.9.0": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": null,
+            "lineNumber": 243
+        },
+        "pkg:maven/org.apache.hadoop/hadoop-auth@3.3.6": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 252
+        },
+        "pkg:maven/org.apache.hadoop/hadoop-minikdc@3.3.6": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "test",
+            "lineNumber": 258
+        },
+        "pkg:maven/com.jcraft/jsch@0.1.55": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": null,
+            "lineNumber": 263
+        },
+        "pkg:maven/org.apache.curator/curator-test@5.2.0": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "test",
+            "lineNumber": 267
+        },
+        "pkg:maven/org.apache.curator/curator-client@5.2.0": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": null,
+            "lineNumber": 272
+        },
+        "pkg:maven/org.apache.curator/curator-recipes@5.2.0": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": null,
+            "lineNumber": 276
+        },
+        "pkg:maven/com.google.code.findbugs/jsr305@3.0.2": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 280
+        },
+        "pkg:maven/org.apache.sshd/sshd-core@1.6.0": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "test",
+            "lineNumber": 285
+        },
+        "pkg:maven/org.apache.ftpserver/ftpserver-core@1.0.0": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "test",
+            "lineNumber": 290
+        },
+        "pkg:maven/io.dropwizard.metrics/metrics-core@3.2.4": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": null,
+            "lineNumber": 318
+        },
+        "pkg:maven/org.apache.zookeeper/zookeeper@3.6.3": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": null,
+            "lineNumber": 322
+        },
+        "pkg:maven/org.apache.commons/commons-compress@1.21": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": null,
+            "lineNumber": 328
+        },
+        "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.68": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "test",
+            "lineNumber": 332
+        },
+        "pkg:maven/org.apache.kerby/kerb-core@1.0.1": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": null,
+            "lineNumber": 337
+        },
+        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.12.7.1": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": null,
+            "lineNumber": 341
+        },
+        "pkg:maven/org.codehaus.woodstox/stax2-api@4.2.1": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 345
+        },
+        "pkg:maven/com.fasterxml.woodstox/woodstox-core@5.4.0": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 350
+        },
+        "pkg:maven/com.squareup.okhttp3/mockwebserver@4.9.3": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "test",
+            "lineNumber": 355
+        },
+        "pkg:maven/dnsjava/dnsjava@2.1.7": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 360
+        },
+        "pkg:maven/org.wildfly.openssl/wildfly-openssl@1.1.3.Final": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "test",
+            "lineNumber": 365
+        },
+        "pkg:maven/org.wildfly.openssl/wildfly-openssl-java@1.1.3.Final": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "provided",
+            "lineNumber": 370
+        },
+        "pkg:maven/org.xerial.snappy/snappy-java@1.1.8.2": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "compile",
+            "lineNumber": 375
+        },
+        "pkg:maven/org.lz4/lz4-java@1.7.1": {
+            "file": "/tmp/1694086456632-pom.xml",
+            "scope": "provided",
+            "lineNumber": 380
+        }
+    },
+    "error": [],
+    "scanResult": {
+        "parent": null,
+        "title": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+        "children": [
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.apache.hadoop.thirdparty/hadoop-shaded-protobuf_3_7@1.1.1",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.apache.hadoop/hadoop-annotations@3.3.6",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.apache.hadoop.thirdparty/hadoop-shaded-guava@1.1.1",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/com.google.guava/guava@27.0-jre",
+                "children": [
+                    {
+                        "parent": "pkg:maven/com.google.guava/guava@27.0-jre",
+                        "title": "pkg:maven/com.google.guava/failureaccess@1.0",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    },
+                    {
+                        "parent": "pkg:maven/com.google.guava/guava@27.0-jre",
+                        "title": "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    },
+                    {
+                        "parent": "pkg:maven/com.google.guava/guava@27.0-jre",
+                        "title": "pkg:maven/org.checkerframework/checker-qual@2.5.2",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    },
+                    {
+                        "parent": "pkg:maven/com.google.guava/guava@27.0-jre",
+                        "title": "pkg:maven/com.google.j2objc/j2objc-annotations@1.1",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    },
+                    {
+                        "parent": "pkg:maven/com.google.guava/guava@27.0-jre",
+                        "title": "pkg:maven/org.codehaus.mojo/animal-sniffer-annotations@1.17",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    }
+                ],
+                "cves": [
+                    {
+                        "cveId": "CVE-2023-2976",
+                        "cvssV3BaseScore": 7.1,
+                        "cvssV3BaseSeverity": "HIGH",
+                        "recommendedVersionList": [],
+                        "stableRecommendedVersionList": []
+                    },
+                    {
+                        "cveId": "CVE-2020-8908",
+                        "cvssV3BaseScore": 3.3,
+                        "cvssV3BaseSeverity": "LOW",
+                        "cvssV2BaseScore": 2.1,
+                        "cvssV2BaseSeverity": "LOW",
+                        "recommendedVersionList": [],
+                        "stableRecommendedVersionList": []
+                    }
+                ],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/commons-cli/commons-cli@1.2",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.apache.commons/commons-math3@3.1.1",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.apache.httpcomponents/httpclient@4.5.13",
+                "children": [
+                    {
+                        "parent": "pkg:maven/org.apache.httpcomponents/httpclient@4.5.13",
+                        "title": "pkg:maven/org.apache.httpcomponents/httpcore@4.4.13",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    }
+                ],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/commons-codec/commons-codec@1.15",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/commons-io/commons-io@2.8.0",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/commons-net/commons-net@3.9.0",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/commons-collections/commons-collections@3.2.2",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/javax.servlet/javax.servlet-api@3.1.0",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/jakarta.activation/jakarta.activation-api@1.2.1",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.51.v20230217",
+                "children": [
+                    {
+                        "parent": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.51.v20230217",
+                        "title": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.51.v20230217",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    },
+                    {
+                        "parent": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.51.v20230217",
+                        "title": "pkg:maven/org.eclipse.jetty/jetty-io@9.4.51.v20230217",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    }
+                ],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.eclipse.jetty/jetty-util@9.4.51.v20230217",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.eclipse.jetty/jetty-servlet@9.4.51.v20230217",
+                "children": [
+                    {
+                        "parent": "pkg:maven/org.eclipse.jetty/jetty-servlet@9.4.51.v20230217",
+                        "title": "pkg:maven/org.eclipse.jetty/jetty-security@9.4.51.v20230217",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    }
+                ],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.eclipse.jetty/jetty-webapp@9.4.51.v20230217",
+                "children": [
+                    {
+                        "parent": "pkg:maven/org.eclipse.jetty/jetty-webapp@9.4.51.v20230217",
+                        "title": "pkg:maven/org.eclipse.jetty/jetty-xml@9.4.51.v20230217",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    }
+                ],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.eclipse.jetty/jetty-util-ajax@9.4.51.v20230217",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/javax.servlet.jsp/jsp-api@2.1",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/com.sun.jersey/jersey-core@1.19.4",
+                "children": [
+                    {
+                        "parent": "pkg:maven/com.sun.jersey/jersey-core@1.19.4",
+                        "title": "pkg:maven/javax.ws.rs/jsr311-api@1.1.1",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    }
+                ],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/com.sun.jersey/jersey-servlet@1.19.4",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/com.github.pjfanning/jersey-json@1.20",
+                "children": [
+                    {
+                        "parent": "pkg:maven/com.github.pjfanning/jersey-json@1.20",
+                        "title": "pkg:maven/org.codehaus.jettison/jettison@1.5.4",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    },
+                    {
+                        "parent": "pkg:maven/com.github.pjfanning/jersey-json@1.20",
+                        "title": "pkg:maven/com.sun.xml.bind/jaxb-impl@2.2.3-1",
+                        "children": [
+                            {
+                                "parent": "pkg:maven/com.sun.xml.bind/jaxb-impl@2.2.3-1",
+                                "title": "pkg:maven/javax.xml.bind/jaxb-api@2.2.11",
+                                "children": [],
+                                "cves": [],
+                                "level": 3
+                            }
+                        ],
+                        "cves": [],
+                        "level": 2
+                    }
+                ],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/com.sun.jersey/jersey-server@1.19.4",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/commons-logging/commons-logging@1.1.3",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/ch.qos.reload4j/reload4j@1.2.22",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/junit/junit@4.13.2",
+                "children": [
+                    {
+                        "parent": "pkg:maven/junit/junit@4.13.2",
+                        "title": "pkg:maven/org.hamcrest/hamcrest-core@1.3",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    }
+                ],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.assertj/assertj-core@3.12.2",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/commons-beanutils/commons-beanutils@1.9.4",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.apache.commons/commons-configuration2@2.8.0",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.apache.commons/commons-lang3@3.12.0",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.apache.commons/commons-text@1.10.0",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.slf4j/slf4j-api@1.7.36",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.slf4j/slf4j-reload4j@1.7.36",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.mockito/mockito-core@2.28.2",
+                "children": [
+                    {
+                        "parent": "pkg:maven/org.mockito/mockito-core@2.28.2",
+                        "title": "pkg:maven/net.bytebuddy/byte-buddy@1.9.10",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    },
+                    {
+                        "parent": "pkg:maven/org.mockito/mockito-core@2.28.2",
+                        "title": "pkg:maven/net.bytebuddy/byte-buddy-agent@1.9.10",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    },
+                    {
+                        "parent": "pkg:maven/org.mockito/mockito-core@2.28.2",
+                        "title": "pkg:maven/org.objenesis/objenesis@2.6",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    }
+                ],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.apache.avro/avro@1.7.7",
+                "children": [
+                    {
+                        "parent": "pkg:maven/org.apache.avro/avro@1.7.7",
+                        "title": "pkg:maven/org.codehaus.jackson/jackson-core-asl@1.9.13",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    },
+                    {
+                        "parent": "pkg:maven/org.apache.avro/avro@1.7.7",
+                        "title": "pkg:maven/org.codehaus.jackson/jackson-mapper-asl@1.9.13",
+                        "children": [],
+                        "cves": [
+                            {
+                                "cveId": "CVE-2019-10202",
+                                "cvssV3BaseScore": 9.8,
+                                "cvssV3BaseSeverity": "CRITICAL",
+                                "cvssV2BaseScore": 7.5,
+                                "cvssV2BaseSeverity": "HIGH",
+                                "recommendedVersionList": [],
+                                "stableRecommendedVersionList": []
+                            },
+                            {
+                                "cveId": "CVE-2019-10172",
+                                "cvssV3BaseScore": 7.5,
+                                "cvssV3BaseSeverity": "HIGH",
+                                "cvssV2BaseScore": 5.0,
+                                "cvssV2BaseSeverity": "MEDIUM",
+                                "recommendedVersionList": [],
+                                "stableRecommendedVersionList": []
+                            }
+                        ],
+                        "level": 2
+                    },
+                    {
+                        "parent": "pkg:maven/org.apache.avro/avro@1.7.7",
+                        "title": "pkg:maven/com.thoughtworks.paranamer/paranamer@2.3",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    }
+                ],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.apache.ant/ant@1.10.13",
+                "children": [
+                    {
+                        "parent": "pkg:maven/org.apache.ant/ant@1.10.13",
+                        "title": "pkg:maven/org.apache.ant/ant-launcher@1.10.13",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    }
+                ],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/com.google.re2j/re2j@1.1",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/com.google.protobuf/protobuf-java@2.5.0",
+                "children": [],
+                "cves": [
+                    {
+                        "cveId": "CVE-2022-3510",
+                        "cvssV3BaseScore": 7.5,
+                        "cvssV3BaseSeverity": "HIGH",
+                        "recommendedVersionList": [],
+                        "stableRecommendedVersionList": []
+                    },
+                    {
+                        "cveId": "CVE-2022-3509",
+                        "cvssV3BaseScore": 7.5,
+                        "cvssV3BaseSeverity": "HIGH",
+                        "recommendedVersionList": [],
+                        "stableRecommendedVersionList": []
+                    },
+                    {
+                        "cveId": "CVE-2022-3171",
+                        "cvssV3BaseScore": 7.5,
+                        "cvssV3BaseSeverity": "HIGH",
+                        "recommendedVersionList": [],
+                        "stableRecommendedVersionList": []
+                    },
+                    {
+                        "cveId": "CVE-2021-22570",
+                        "cvssV3BaseScore": 5.5,
+                        "cvssV3BaseSeverity": "MEDIUM",
+                        "cvssV2BaseScore": 2.1,
+                        "cvssV2BaseSeverity": "LOW",
+                        "recommendedVersionList": [],
+                        "stableRecommendedVersionList": []
+                    },
+                    {
+                        "cveId": "CVE-2021-22569",
+                        "cvssV3BaseScore": 5.5,
+                        "cvssV3BaseSeverity": "MEDIUM",
+                        "cvssV2BaseScore": 4.3,
+                        "cvssV2BaseSeverity": "MEDIUM",
+                        "recommendedVersionList": [],
+                        "stableRecommendedVersionList": []
+                    }
+                ],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/com.google.code.gson/gson@2.9.0",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.apache.hadoop/hadoop-auth@3.3.6",
+                "children": [
+                    {
+                        "parent": "pkg:maven/org.apache.hadoop/hadoop-auth@3.3.6",
+                        "title": "pkg:maven/com.nimbusds/nimbus-jose-jwt@9.8.1",
+                        "children": [
+                            {
+                                "parent": "pkg:maven/com.nimbusds/nimbus-jose-jwt@9.8.1",
+                                "title": "pkg:maven/com.github.stephenc.jcip/jcip-annotations@1.0-1",
+                                "children": [],
+                                "cves": [],
+                                "level": 3
+                            }
+                        ],
+                        "cves": [],
+                        "level": 2
+                    },
+                    {
+                        "parent": "pkg:maven/org.apache.hadoop/hadoop-auth@3.3.6",
+                        "title": "pkg:maven/org.apache.curator/curator-framework@5.2.0",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    },
+                    {
+                        "parent": "pkg:maven/org.apache.hadoop/hadoop-auth@3.3.6",
+                        "title": "pkg:maven/org.apache.kerby/kerb-simplekdc@1.0.1",
+                        "children": [
+                            {
+                                "parent": "pkg:maven/org.apache.kerby/kerb-simplekdc@1.0.1",
+                                "title": "pkg:maven/org.apache.kerby/kerb-client@1.0.1",
+                                "children": [
+                                    {
+                                        "parent": "pkg:maven/org.apache.kerby/kerb-client@1.0.1",
+                                        "title": "pkg:maven/org.apache.kerby/kerby-config@1.0.1",
+                                        "children": [],
+                                        "cves": [],
+                                        "level": 4
+                                    },
+                                    {
+                                        "parent": "pkg:maven/org.apache.kerby/kerb-client@1.0.1",
+                                        "title": "pkg:maven/org.apache.kerby/kerb-common@1.0.1",
+                                        "children": [
+                                            {
+                                                "parent": "pkg:maven/org.apache.kerby/kerb-common@1.0.1",
+                                                "title": "pkg:maven/org.apache.kerby/kerb-crypto@1.0.1",
+                                                "children": [],
+                                                "cves": [],
+                                                "level": 5
+                                            }
+                                        ],
+                                        "cves": [],
+                                        "level": 4
+                                    },
+                                    {
+                                        "parent": "pkg:maven/org.apache.kerby/kerb-client@1.0.1",
+                                        "title": "pkg:maven/org.apache.kerby/kerb-util@1.0.1",
+                                        "children": [],
+                                        "cves": [],
+                                        "level": 4
+                                    },
+                                    {
+                                        "parent": "pkg:maven/org.apache.kerby/kerb-client@1.0.1",
+                                        "title": "pkg:maven/org.apache.kerby/token-provider@1.0.1",
+                                        "children": [],
+                                        "cves": [],
+                                        "level": 4
+                                    }
+                                ],
+                                "cves": [],
+                                "level": 3
+                            },
+                            {
+                                "parent": "pkg:maven/org.apache.kerby/kerb-simplekdc@1.0.1",
+                                "title": "pkg:maven/org.apache.kerby/kerb-admin@1.0.1",
+                                "children": [
+                                    {
+                                        "parent": "pkg:maven/org.apache.kerby/kerb-admin@1.0.1",
+                                        "title": "pkg:maven/org.apache.kerby/kerb-server@1.0.1",
+                                        "children": [
+                                            {
+                                                "parent": "pkg:maven/org.apache.kerby/kerb-server@1.0.1",
+                                                "title": "pkg:maven/org.apache.kerby/kerb-identity@1.0.1",
+                                                "children": [],
+                                                "cves": [],
+                                                "level": 5
+                                            }
+                                        ],
+                                        "cves": [],
+                                        "level": 4
+                                    },
+                                    {
+                                        "parent": "pkg:maven/org.apache.kerby/kerb-admin@1.0.1",
+                                        "title": "pkg:maven/org.apache.kerby/kerby-xdr@1.0.1",
+                                        "children": [],
+                                        "cves": [],
+                                        "level": 4
+                                    }
+                                ],
+                                "cves": [],
+                                "level": 3
+                            }
+                        ],
+                        "cves": [],
+                        "level": 2
+                    }
+                ],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.apache.hadoop/hadoop-minikdc@3.3.6",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/com.jcraft/jsch@0.1.55",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.apache.curator/curator-test@5.2.0",
+                "children": [
+                    {
+                        "parent": "pkg:maven/org.apache.curator/curator-test@5.2.0",
+                        "title": "pkg:maven/org.junit.jupiter/junit-jupiter-api@5.8.2",
+                        "children": [
+                            {
+                                "parent": "pkg:maven/org.junit.jupiter/junit-jupiter-api@5.8.2",
+                                "title": "pkg:maven/org.opentest4j/opentest4j@1.2.0",
+                                "children": [],
+                                "cves": [],
+                                "level": 3
+                            },
+                            {
+                                "parent": "pkg:maven/org.junit.jupiter/junit-jupiter-api@5.8.2",
+                                "title": "pkg:maven/org.junit.platform/junit-platform-commons@1.8.2",
+                                "children": [],
+                                "cves": [],
+                                "level": 3
+                            },
+                            {
+                                "parent": "pkg:maven/org.junit.jupiter/junit-jupiter-api@5.8.2",
+                                "title": "pkg:maven/org.apiguardian/apiguardian-api@1.1.2",
+                                "children": [],
+                                "cves": [],
+                                "level": 3
+                            }
+                        ],
+                        "cves": [],
+                        "level": 2
+                    }
+                ],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.apache.curator/curator-client@5.2.0",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.apache.curator/curator-recipes@5.2.0",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.apache.sshd/sshd-core@1.6.0",
+                "children": [],
+                "cves": [
+                    {
+                        "cveId": "CVE-2023-35887",
+                        "cvssV3BaseScore": 4.3,
+                        "cvssV3BaseSeverity": "MEDIUM",
+                        "recommendedVersionList": [],
+                        "stableRecommendedVersionList": []
+                    },
+                    {
+                        "cveId": "CVE-2022-45047",
+                        "cvssV3BaseScore": 9.8,
+                        "cvssV3BaseSeverity": "CRITICAL",
+                        "recommendedVersionList": [],
+                        "stableRecommendedVersionList": []
+                    }
+                ],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.apache.ftpserver/ftpserver-core@1.0.0",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.apache.zookeeper/zookeeper@3.6.3",
+                "children": [
+                    {
+                        "parent": "pkg:maven/org.apache.zookeeper/zookeeper@3.6.3",
+                        "title": "pkg:maven/org.apache.zookeeper/zookeeper-jute@3.6.3",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    },
+                    {
+                        "parent": "pkg:maven/org.apache.zookeeper/zookeeper@3.6.3",
+                        "title": "pkg:maven/org.apache.yetus/audience-annotations@0.5.0",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    }
+                ],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/io.dropwizard.metrics/metrics-core@3.2.4",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.apache.commons/commons-compress@1.21",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.68",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.apache.kerby/kerb-core@1.0.1",
+                "children": [
+                    {
+                        "parent": "pkg:maven/org.apache.kerby/kerb-core@1.0.1",
+                        "title": "pkg:maven/org.apache.kerby/kerby-pkix@1.0.1",
+                        "children": [
+                            {
+                                "parent": "pkg:maven/org.apache.kerby/kerby-pkix@1.0.1",
+                                "title": "pkg:maven/org.apache.kerby/kerby-asn1@1.0.1",
+                                "children": [],
+                                "cves": [],
+                                "level": 3
+                            },
+                            {
+                                "parent": "pkg:maven/org.apache.kerby/kerby-pkix@1.0.1",
+                                "title": "pkg:maven/org.apache.kerby/kerby-util@1.0.1",
+                                "children": [],
+                                "cves": [],
+                                "level": 3
+                            }
+                        ],
+                        "cves": [],
+                        "level": 2
+                    }
+                ],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.12.7.1",
+                "children": [
+                    {
+                        "parent": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.12.7.1",
+                        "title": "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.12.7",
+                        "children": [],
+                        "cves": [],
+                        "level": 2
+                    }
+                ],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.codehaus.woodstox/stax2-api@4.2.1",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/com.fasterxml.woodstox/woodstox-core@5.4.0",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/com.squareup.okhttp3/mockwebserver@4.9.3",
+                "children": [
+                    {
+                        "parent": "pkg:maven/com.squareup.okhttp3/mockwebserver@4.9.3",
+                        "title": "pkg:maven/com.squareup.okhttp3/okhttp@4.9.3",
+                        "children": [
+                            {
+                                "parent": "pkg:maven/com.squareup.okhttp3/okhttp@4.9.3",
+                                "title": "pkg:maven/com.squareup.okio/okio@2.8.0",
+                                "children": [],
+                                "cves": [
+                                    {
+                                        "cveId": "CVE-2023-3635",
+                                        "cvssV3BaseScore": 7.5,
+                                        "cvssV3BaseSeverity": "HIGH",
+                                        "recommendedVersionList": [],
+                                        "stableRecommendedVersionList": []
+                                    }
+                                ],
+                                "level": 3
+                            }
+                        ],
+                        "cves": [],
+                        "level": 2
+                    },
+                    {
+                        "parent": "pkg:maven/com.squareup.okhttp3/mockwebserver@4.9.3",
+                        "title": "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@1.4.10",
+                        "children": [
+                            {
+                                "parent": "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@1.4.10",
+                                "title": "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.4.10",
+                                "children": [
+                                    {
+                                        "parent": "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.4.10",
+                                        "title": "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-common@1.4.10",
+                                        "children": [],
+                                        "cves": [],
+                                        "level": 4
+                                    }
+                                ],
+                                "cves": [
+                                    {
+                                        "cveId": "CVE-2022-24329",
+                                        "cvssV3BaseScore": 5.3,
+                                        "cvssV3BaseSeverity": "MEDIUM",
+                                        "cvssV2BaseScore": 5.0,
+                                        "cvssV2BaseSeverity": "MEDIUM",
+                                        "recommendedVersionList": [],
+                                        "stableRecommendedVersionList": []
+                                    },
+                                    {
+                                        "cveId": "CVE-2020-29582",
+                                        "cvssV3BaseScore": 5.3,
+                                        "cvssV3BaseSeverity": "MEDIUM",
+                                        "cvssV2BaseScore": 5.0,
+                                        "cvssV2BaseSeverity": "MEDIUM",
+                                        "recommendedVersionList": [],
+                                        "stableRecommendedVersionList": []
+                                    }
+                                ],
+                                "level": 3
+                            },
+                            {
+                                "parent": "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@1.4.10",
+                                "title": "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk7@1.4.10",
+                                "children": [],
+                                "cves": [],
+                                "level": 3
+                            }
+                        ],
+                        "cves": [],
+                        "level": 2
+                    }
+                ],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/dnsjava/dnsjava@2.1.7",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.wildfly.openssl/wildfly-openssl@1.1.3.Final",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.wildfly.openssl/wildfly-openssl-java@1.1.3.Final",
+                "children": [],
+                "cves": [],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.xerial.snappy/snappy-java@1.1.8.2",
+                "children": [],
+                "cves": [
+                    {
+                        "cveId": "CVE-2023-34455",
+                        "cvssV3BaseScore": 7.5,
+                        "cvssV3BaseSeverity": "HIGH",
+                        "recommendedVersionList": [],
+                        "stableRecommendedVersionList": []
+                    },
+                    {
+                        "cveId": "CVE-2023-34454",
+                        "cvssV3BaseScore": 7.5,
+                        "cvssV3BaseSeverity": "HIGH",
+                        "recommendedVersionList": [],
+                        "stableRecommendedVersionList": []
+                    },
+                    {
+                        "cveId": "CVE-2023-34453",
+                        "cvssV3BaseScore": 7.5,
+                        "cvssV3BaseSeverity": "HIGH",
+                        "recommendedVersionList": [],
+                        "stableRecommendedVersionList": []
+                    }
+                ],
+                "level": 1
+            },
+            {
+                "parent": "pkg:maven/org.apache.hadoop/hadoop-common@3.3.6",
+                "title": "pkg:maven/org.lz4/lz4-java@1.7.1",
+                "children": [],
+                "cves": [],
+                "level": 1
+            }
+        ],
+        "cves": [],
+        "level": 0
+    }
+}
