@@ -1,533 +1,471 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.assertj</groupId>
-		<artifactId>assertj-parent</artifactId>
-		<version>3.24.2</version>
-		<relativePath>../assertj-parent</relativePath>
-	</parent>
-	<artifactId>assertj-core</artifactId>
-	<name>AssertJ Core</name>
-	<description>Rich and fluent assertions for testing in Java</description>
-	<url>${project.organization.url}#${project.artifactId}</url>
-	<properties>
-		<argLine> -Dfile.encoding=${project.build.sourceEncoding}
-			-Dnet.bytebuddy.experimental=true
-			--add-opens=java.base/java.lang=ALL-UNNAMED
-			--add-opens=java.base/java.math=ALL-UNNAMED
-			--add-opens=java.base/java.util=ALL-UNNAMED
-			--add-opens=java.base/sun.nio.fs=ALL-UNNAMED </argLine>
-		<javadocAdditionalOptions>-html5 --allow-script-in-comments</javadocAdditionalOptions>
-		<!--  Dependency versions  -->
-		<byte-buddy.version>1.12.21</byte-buddy.version>
-		<hamcrest.version>2.2</hamcrest.version>
-		<!--  Plugin versions  -->
-		<cdg.pitest.version>1.0.3</cdg.pitest.version>
-	</properties>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>net.bytebuddy</groupId>
-				<artifactId>byte-buddy</artifactId>
-				<version>${byte-buddy.version}</version>
-			</dependency>
-			<dependency>
-				<!--  Included by mockito-core  -->
-				<groupId>net.bytebuddy</groupId>
-				<artifactId>byte-buddy-agent</artifactId>
-				<version>${byte-buddy.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.hamcrest</groupId>
-				<artifactId>hamcrest</artifactId>
-				<version>${hamcrest.version}</version>
-			</dependency>
-			<dependency>
-				<!--  Included by hibernate-core  -->
-				<groupId>org.jboss.logging</groupId>
-				<artifactId>jboss-logging</artifactId>
-				<version>3.5.0.Final</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-	<dependencies>
-		<!--  Compile  -->
-		<dependency>
-			<groupId>net.bytebuddy</groupId>
-			<artifactId>byte-buddy</artifactId>
-		</dependency>
-		<!--  Provided  -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>provided</scope>
-			<optional>true</optional>
-			<exclusions>
-				<!--  This has to be excluded because it's subjecting the code
-				to the incorrect version of certain hamcrest packages.  -->
-				<exclusion>
-					<groupId>org.hamcrest</groupId>
-					<artifactId>hamcrest-core</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest</artifactId>
-			<scope>provided</scope>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
-			<scope>provided</scope>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.opentest4j</groupId>
-			<artifactId>opentest4j</artifactId>
-			<scope>provided</scope>
-			<optional>true</optional>
-		</dependency>
-		<!--  Test  -->
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.11.0</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>2.14.1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>31.1-jre</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>jakarta.ws.rs</groupId>
-			<artifactId>jakarta.ws.rs-api</artifactId>
-			<version>3.1.0</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>nl.jqno.equalsverifier</groupId>
-			<artifactId>equalsverifier</artifactId>
-			<version>3.12.3</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-collections4</artifactId>
-			<version>4.4</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.12.0</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate.orm</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>6.1.6.Final</version>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>jakarta.inject</groupId>
-					<artifactId>jakarta.inject-api</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.junit-pioneer</groupId>
-			<artifactId>junit-pioneer</artifactId>
-			<version>1.9.1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.platform</groupId>
-			<artifactId>junit-platform-testkit</artifactId>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.assertj</groupId>
-					<artifactId>assertj-core</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<!--  required to run JUnit4 tests in eclipse without to explicitly
-		select JUnit 4 runner ...  -->
-		<dependency>
-			<groupId>org.junit.vintage</groupId>
-			<artifactId>junit-vintage-engine</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-junit-jupiter</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
-			<version>5.3.24</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>net.alchim31.maven</groupId>
-					<artifactId>yuicompressor-maven-plugin</artifactId>
-					<version>1.5.1</version>
-				</plugin>
-				<!-- This plugin's configuration is used to store Eclipse m2e
-				settings only. It has no influence on the Maven build
-          itself.  -->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>com.mycila</groupId>
-										<artifactId>license-maven-plugin</artifactId>
-										<versionRange>[2.6,)</versionRange>
-										<goals>
-											<goal>format</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore />
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>com.github.siom79.japicmp</groupId>
-					<artifactId>japicmp-maven-plugin</artifactId>
-					<configuration>
-						<dependencies>
-							<dependency>
-								<groupId>junit</groupId>
-								<artifactId>junit</artifactId>
-								<version>${junit.version}</version>
-							</dependency>
-							<dependency>
-								<groupId>org.hamcrest</groupId>
-								<artifactId>hamcrest</artifactId>
-								<version>${hamcrest.version}</version>
-							</dependency>
-							<dependency>
-								<groupId>org.junit.jupiter</groupId>
-								<artifactId>junit-jupiter-api</artifactId>
-								<version>${junit-jupiter.version}</version>
-							</dependency>
-							<dependency>
-								<groupId>org.opentest4j</groupId>
-								<artifactId>opentest4j</artifactId>
-								<version>${opentest4j.version}</version>
-							</dependency>
-						</dependencies>
-						<parameter>
-							<excludes>
-								<exclude>org.assertj.core.internal</exclude>
-							</excludes>
-							<overrideCompatibilityChangeParameters>
-								<!--  Unlikely that AssertJ users will encounter
-								an IncompatibleClassChangeError (ref: JLS
-								13.5.6)  -->
-								<overrideCompatibilityChangeParameter>
-									<compatibilityChange>METHOD_NEW_DEFAULT</compatibilityChange>
-									<binaryCompatible>true</binaryCompatible>
-									<sourceCompatible>true</sourceCompatible>
-								</overrideCompatibilityChangeParameter>
-							</overrideCompatibilityChangeParameters>
-						</parameter>
-						<skipXmlReport>true</skipXmlReport>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-enforcer-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>enforce-java-and-dependencies</id>
-						<goals>
-							<goal>enforce</goal>
-						</goals>
-						<configuration>
-							<rules>
-								<bannedDependencies>
-									<includes>
-										<include>net.bytebuddy:byte-buddy</include>
-									</includes>
-									<excludes>
-										<exclude>org.assertj:assertj-core</exclude>
-										<exclude>org.hamcrest:hamcrest-core</exclude>
-										<exclude>*:*:*:jar:compile</exclude>
-									</excludes>
-								</bannedDependencies>
-								<dependencyConvergence />
-								<requireJavaVersion>
-									<version>[17,)</version>
-								</requireJavaVersion>
-							</rules>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<showDeprecation>true</showDeprecation>
-					<showWarnings>true</showWarnings>
-				</configuration>
-				<executions>
-					<execution>
-						<id>jdk9</id>
-						<goals>
-							<goal>compile</goal>
-						</goals>
-						<configuration>
-							<release>9</release>
-							<compileSourceRoots>
-								<compileSourceRoot>
-									${project.basedir}/src/main/java9</compileSourceRoot>
-							</compileSourceRoots>
-							<multiReleaseOutput>true</multiReleaseOutput>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.0.0-M7</version>
-				<configuration>
-					<trimStackTrace>false</trimStackTrace>
-					<excludes>
-						<exclude>
-							org/assertj/core/internal/objects/Objects_assertHasOnlyFields_Test*</exclude>
-					</excludes>
-					<runOrder>random</runOrder>
-					<!-- 
-            These blocks are needed to show
-					@DisplayName and @ParameterizedTest
-            in reports
-					with the provided names, as well as with console output.
-           -->
-					<consoleOutputReporter
-						implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5ConsoleOutputReporter">
-						<!--  Set to true to suppress log output being included
-						in Surefire output  -->
-						<disable>false</disable>
-					</consoleOutputReporter>
-					<statelessTestsetInfoReporter
-						implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5StatelessTestsetInfoReporter">
-						<disable>false</disable>
-						<usePhrasedFileName>false</usePhrasedFileName>
-						<usePhrasedClassNameInRunning>true</usePhrasedClassNameInRunning>
-						<usePhrasedClassNameInTestCaseSummary>true</usePhrasedClassNameInTestCaseSummary>
-					</statelessTestsetInfoReporter>
-					<statelessTestsetReporter
-						implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5Xml30StatelessReporter">
-						<disable>false</disable>
-						<usePhrasedFileName>false</usePhrasedFileName>
-						<usePhrasedTestSuiteClassName>true</usePhrasedTestSuiteClassName>
-						<usePhrasedTestCaseClassName>true</usePhrasedTestCaseClassName>
-						<usePhrasedTestCaseMethodName>true</usePhrasedTestCaseMethodName>
-					</statelessTestsetReporter>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<configuration>
-					<rules>
-						<rule
-							implementation="org.jacoco.maven.RuleConfiguration">
-							<element>BUNDLE</element>
-							<limits>
-								<limit
-									implementation="org.jacoco.report.check.Limit">
-									<counter>CLASS</counter>
-									<value>COVEREDRATIO</value>
-									<minimum>0.98</minimum>
-								</limit>
-							</limits>
-						</rule>
-					</rules>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>biz.aQute.bnd</groupId>
-				<artifactId>bnd-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>jar</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-						<configuration>
-							<bnd>
-<![CDATA[ Import-Package:\ net.bytebuddy.*,\ !org.assertj.core.*,\ *;resolution:="optional" Multi-Release: true -exportcontents: \ !org.assertj.core.internal.*,\ org.assertj.core.* -noclassforname: true -noextraheaders: true -snapshot: SNAPSHOT -removeheaders: Private-Package -fixupmessages: \ "Classes found in the wrong directory...";is:=ignore ]]>
-</bnd>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>net.alchim31.maven</groupId>
-				<artifactId>yuicompressor-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>generate-sources</phase>
-						<!--  invoked by maven-javadoc-plugin  -->
-						<goals>
-							<goal>compress</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<sourceDirectory>src/main/javadoc</sourceDirectory>
-					<outputDirectory>
-						${project.build.directory}/javadoc-stylesheet</outputDirectory>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<configuration>
-					<!--  Explicitly set Javadoc locale to English  -->
-					<locale>en_US</locale>
-					<!--  needed to fix javadoc on java 11+
-					https://github.com/assertj/assertj/issues/1403  -->
-					<source>8</source>
-					<!--  (1) CSS file location  -->
-					<stylesheetfile>
-						${project.build.directory}/javadoc-stylesheet/assertj-javadoc-min.css</stylesheetfile>
-					<!--  init Highlight  -->
-					<additionalOptions>${javadocAdditionalOptions}</additionalOptions>
-					<nohelp>true</nohelp>
-					<bottom>
-<![CDATA[ Copyright &#169; {currentYear} {organizationName}. All rights reserved. <link rel="stylesheet" href="./assertj-javadoc.css""> <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script> <script>hljs.highlightAll();</script> ]]>
-</bottom>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.pitest</groupId>
-				<artifactId>pitest-maven</artifactId>
-				<version>1.10.4</version>
-				<dependencies>
-					<dependency>
-						<groupId>org.pitest</groupId>
-						<artifactId>pitest-junit5-plugin</artifactId>
-						<version>1.1.1</version>
-					</dependency>
-					<dependency>
-						<groupId>com.groupcdg</groupId>
-						<artifactId>pitest-git-plugin</artifactId>
-						<version>${cdg.pitest.version}</version>
-					</dependency>
-				</dependencies>
-				<configuration>
-					<threads>3</threads>
-					<timestampedReports>false</timestampedReports>
-					<failWhenNoMutations>false</failWhenNoMutations>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
-	<profiles>
-		<profile>
-			<id>pitest</id>
-			<build>
-				<pluginManagement>
-					<plugins>
-						<!--  provides the pitest-git:aggregate goal to
-						aggregate json files to be stored as artifact when
-						accepting PRs from untrusted forks
-     refers to
-						pitest-receive-pr.yml and pitest-updated-pr.yml for
-						details.
- -->
-						<plugin>
-							<groupId>com.groupcdg</groupId>
-							<artifactId>pitest-git-maven-plugin</artifactId>
-							<version>${cdg.pitest.version}</version>
-						</plugin>
-					</plugins>
-				</pluginManagement>
-				<plugins>
-					<plugin>
-						<groupId>org.pitest</groupId>
-						<artifactId>pitest-maven</artifactId>
-						<executions>
-							<execution>
-								<id>pitest</id>
-								<phase>test-compile</phase>
-								<goals>
-									<goal>mutationCoverage</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<profile>
-			<id>japicmp-branch</id>
-			<build>
-				<pluginManagement>
-					<plugins>
-						<plugin>
-							<groupId>com.github.siom79.japicmp</groupId>
-							<artifactId>japicmp-maven-plugin</artifactId>
-							<configuration>
-								<oldVersion>
-									<file>
-										<path>
-											${japicmp.oldVersion.basedir}/target/${project.build.finalName}.${project.packaging}</path>
-									</file>
-								</oldVersion>
-							</configuration>
-						</plugin>
-					</plugins>
-				</pluginManagement>
-			</build>
-		</profile>
-	</profiles>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<!--  This module was also published with a richer model, Gradle metadata,   -->
+<!--  which should be used instead. Do not delete the following line which   -->
+<!--  is to indicate to Gradle or any Gradle module metadata file consumer   -->
+<!--  that they should prefer consuming it instead.  -->
+<!--  do_not_remove: published-with-gradle-metadata  -->
+<modelVersion>4.0.0</modelVersion>
+<parent>
+<groupId>com.fasterxml.jackson</groupId>
+<artifactId>jackson-base</artifactId>
+<version>2.15.2</version>
+</parent>
+<groupId>com.fasterxml.jackson.core</groupId>
+<artifactId>jackson-databind</artifactId>
+<version>2.15.2</version>
+<name>jackson-databind</name>
+<packaging>jar</packaging>
+<description>General data-binding functionality for Jackson: works on core streaming API</description>
+<url>https://github.com/FasterXML/jackson</url>
+<inceptionYear>2008</inceptionYear>
+<licenses>
+<license>
+<name>The Apache Software License, Version 2.0</name>
+<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+<distribution>repo</distribution>
+</license>
+</licenses>
+<scm>
+<connection>scm:git:git@github.com:FasterXML/jackson-databind.git</connection>
+<developerConnection>scm:git:git@github.com:FasterXML/jackson-databind.git</developerConnection>
+<url>https://github.com/FasterXML/jackson-databind</url>
+<tag>jackson-databind-2.15.2</tag>
+</scm>
+<properties>
+<!--  Until Jackson 2.11 (inclusive) baseline was JDK 7 (except for annotations/streaming),
+         with 2.12 baseline became JDK8
+       -->
+<javac.src.version>1.8</javac.src.version>
+<javac.target.version>1.8</javac.target.version>
+<!--  12-Nov-2022, tatu: [databind#3659] Verify Android SDK compatibility.
+
+         Baseline compatibility:
+
+         * Jackson 2.13 compatible with Android SDK 24 and up
+         * Jackson 2.14 compatible with Android SDK 26 and up
+         * Jackson 2.15 compatible with Android SDK 26 and up
+
+       -->
+<version.android.sdk>26</version.android.sdk>
+<version.android.sdk.signature>0.5.1</version.android.sdk.signature>
+<!--  Can not use default, since group id != Java package name here  -->
+<osgi.export>com.fasterxml.jackson.databind.*;version=${project.version}</osgi.export>
+<!--  fix for databind#2299: using jackson-databind in an OSGi environment under Android  -->
+<osgi.import> org.w3c.dom.bootstrap;resolution:=optional, * </osgi.import>
+<!--  Generate PackageVersion.java into this directory.  -->
+<packageVersion.dir>com/fasterxml/jackson/databind/cfg</packageVersion.dir>
+<packageVersion.package>com.fasterxml.jackson.databind.cfg</packageVersion.package>
+<version.powermock>2.0.9</version.powermock>
+<!--  for Reproducible Builds  -->
+<project.build.outputTimestamp>2023-05-30T23:26:36Z</project.build.outputTimestamp>
+</properties>
+<dependencies>
+<!--  Builds on core streaming API; also needs core annotations  -->
+<dependency>
+<groupId>com.fasterxml.jackson.core</groupId>
+<artifactId>jackson-annotations</artifactId>
+<!--  06-Mar-2017, tatu: Although bom provides for dependencies, some legacy
+             usage seems to benefit from actually specifying version here in case
+             it is dependent on transitively
+         -->
+<version>${jackson.version.annotations}</version>
+</dependency>
+<dependency>
+<groupId>com.fasterxml.jackson.core</groupId>
+<artifactId>jackson-core</artifactId>
+<version>${jackson.version.core}</version>
+</dependency>
+<!--  Test dependencies  -->
+<dependency>
+<groupId>org.junit.vintage</groupId>
+<artifactId>junit-vintage-engine</artifactId>
+<scope>test</scope>
+</dependency>
+<dependency>
+<groupId>org.junit.jupiter</groupId>
+<artifactId>junit-jupiter</artifactId>
+<scope>test</scope>
+</dependency>
+<dependency>
+<groupId>org.powermock</groupId>
+<artifactId>powermock-core</artifactId>
+<version>${version.powermock}</version>
+<scope>test</scope>
+</dependency>
+<dependency>
+<groupId>org.powermock</groupId>
+<artifactId>powermock-module-junit4</artifactId>
+<version>${version.powermock}</version>
+<scope>test</scope>
+</dependency>
+<dependency>
+<groupId>org.powermock</groupId>
+<artifactId>powermock-api-mockito2</artifactId>
+<version>${version.powermock}</version>
+<scope>test</scope>
+</dependency>
+<dependency>
+<groupId>com.google.guava</groupId>
+<artifactId>guava-testlib</artifactId>
+<version>31.1-jre</version>
+<scope>test</scope>
+</dependency>
+<!--  For testing TestNoClassDefFoundDeserializer  -->
+<dependency>
+<groupId>javax.measure</groupId>
+<artifactId>jsr-275</artifactId>
+<version>0.9.1</version>
+<scope>test</scope>
+</dependency>
+<!--  For heap usage testing see https://github.com/FasterXML/jackson-databind/pull/3675  -->
+<dependency>
+<groupId>org.openjdk.jol</groupId>
+<artifactId>jol-core</artifactId>
+<version>0.16</version>
+<scope>test</scope>
+</dependency>
+</dependencies>
+<!--  Alas, need to include snapshot reference since otherwise can not find
+       snapshot of parent...  -->
+<repositories>
+<repository>
+<id>sonatype-nexus-snapshots</id>
+<name>Sonatype Nexus Snapshots</name>
+<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+<releases>
+<enabled>false</enabled>
+</releases>
+<snapshots>
+<enabled>true</enabled>
+</snapshots>
+</repository>
+</repositories>
+<dependencyManagement>
+<dependencies>
+<dependency>
+<groupId>org.junit</groupId>
+<artifactId>junit-bom</artifactId>
+<version>5.9.2</version>
+<type>pom</type>
+<scope>import</scope>
+</dependency>
+</dependencies>
+</dependencyManagement>
+<build>
+<plugins>
+<plugin>
+<groupId>org.jacoco</groupId>
+<artifactId>jacoco-maven-plugin</artifactId>
+<executions>
+<execution>
+<goals>
+<goal>prepare-agent</goal>
+</goals>
+</execution>
+<!--  attached to Maven test phase  -->
+<execution>
+<id>report</id>
+<phase>test</phase>
+<goals>
+<goal>report</goal>
+</goals>
+</execution>
+</executions>
+</plugin>
+<!--  Important: enable enforcer plug-in:  -->
+<plugin>
+<artifactId>maven-enforcer-plugin</artifactId>
+<executions>
+<!--  or?  combine.children="merge">  -->
+<execution>
+<id>enforce-properties</id>
+<phase>validate</phase>
+<goals>
+<goal>enforce</goal>
+</goals>
+</execution>
+</executions>
+</plugin>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<version>${version.plugin.surefire}</version>
+<artifactId>maven-surefire-plugin</artifactId>
+<configuration>
+<classpathDependencyExcludes>
+<exclude>javax.measure:jsr-275</exclude>
+</classpathDependencyExcludes>
+<excludes>
+<exclude>com.fasterxml.jackson.databind.MapperFootprintTest</exclude>
+<exclude>**/failing/**/*.java</exclude>
+</excludes>
+<!--  26-Nov-2019, tatu: moar parallelism! Per-class basis, safe, efficient enough
+                  ... although not 100% sure this makes much difference TBH
+             -->
+<threadCount>4</threadCount>
+<parallel>classes</parallel>
+</configuration>
+</plugin>
+<!--  parent definitions should be ok, but need to add more links  -->
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-javadoc-plugin</artifactId>
+<configuration>
+<links combine.children="append">
+<link>https://fasterxml.github.io/jackson-annotations/javadoc/2.14</link>
+<link>https://fasterxml.github.io/jackson-core/javadoc/2.14</link>
+</links>
+</configuration>
+</plugin>
+<!--  settings are fine, but needed to trigger execution!  -->
+<plugin>
+<groupId>com.google.code.maven-replacer-plugin</groupId>
+<artifactId>replacer</artifactId>
+</plugin>
+<!--   04-Mar-2019, tatu: Add rudimentary JDK9+ module info. To build with JDK 8
+             will have to use `moduleInfoFile` as anything else requires JDK 9+
+         -->
+<plugin>
+<groupId>org.moditect</groupId>
+<artifactId>moditect-maven-plugin</artifactId>
+</plugin>
+<!--  03-Nov-2020, tatu: Add LICENSE from main level  -->
+<plugin>
+<groupId>org.codehaus.mojo</groupId>
+<artifactId>build-helper-maven-plugin</artifactId>
+</plugin>
+<plugin>
+<groupId>de.jjohannes</groupId>
+<artifactId>gradle-module-metadata-maven-plugin</artifactId>
+</plugin>
+<!--  12-Nov-2022, tatu: [databind#3659] add verification of compatibility
+	   wrt Android SDK versions using AnimalSniffer with "gummy bears" signatures.
+
+           To be run from CI, but manually with:
+
+              mvn animal-sniffer:check
+	 -->
+<plugin>
+<groupId>org.codehaus.mojo</groupId>
+<artifactId>animal-sniffer-maven-plugin</artifactId>
+<version>1.22</version>
+<configuration>
+<signature>
+<groupId>com.toasttab.android</groupId>
+<artifactId>gummy-bears-api-${version.android.sdk}</artifactId>
+<version>${version.android.sdk.signature}</version>
+</signature>
+<ignores>
+<!--  These are only accessed (safely) via "Java7SupportImpl.java" so ignore
+               -->
+<ignore>java.beans.ConstructorProperties</ignore>
+<ignore>java.beans.Transient</ignore>
+</ignores>
+</configuration>
+</plugin>
+</plugins>
+</build>
+<profiles>
+<profile>
+<id>release</id>
+<properties>
+<maven.test.skip>true</maven.test.skip>
+<skipTests>true</skipTests>
+</properties>
+</profile>
+<!--  07-Dec-2021, tatu: This is a huge mess, sorry folks...  -->
+<profile>
+<id>java14</id>
+<activation>
+<jdk>14</jdk>
+</activation>
+<build>
+<plugins>
+<plugin>
+<groupId>org.codehaus.mojo</groupId>
+<artifactId>build-helper-maven-plugin</artifactId>
+<executions>
+<execution>
+<id>add-test-source</id>
+<phase>generate-test-sources</phase>
+<goals>
+<goal>add-test-source</goal>
+</goals>
+<configuration>
+<sources>
+<source>src/test-jdk14/java</source>
+</sources>
+</configuration>
+</execution>
+</executions>
+</plugin>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-compiler-plugin</artifactId>
+<inherited>true</inherited>
+<configuration>
+<optimize>true</optimize>
+<!--  Enable Java 14+ for all sources so that Intellij picks the right language level  -->
+<source>14</source>
+<release>14</release>
+<compilerArgs>
+<arg>-parameters</arg>
+<arg>--enable-preview</arg>
+</compilerArgs>
+<fork>true</fork>
+<useIncrementalCompilation>true</useIncrementalCompilation>
+</configuration>
+</plugin>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-surefire-plugin</artifactId>
+<configuration>
+<argLine>--enable-preview</argLine>
+</configuration>
+</plugin>
+</plugins>
+</build>
+</profile>
+<profile>
+<!--  And different set up for JDK 17  -->
+<id>java17</id>
+<activation>
+<jdk>17</jdk>
+</activation>
+<build>
+<plugins>
+<plugin>
+<groupId>org.codehaus.mojo</groupId>
+<artifactId>build-helper-maven-plugin</artifactId>
+<executions>
+<execution>
+<id>add-test-source</id>
+<phase>generate-test-sources</phase>
+<goals>
+<goal>add-test-source</goal>
+</goals>
+<configuration>
+<sources>
+<source>src/test-jdk14/java</source>
+<source>src/test-jdk17/java</source>
+</sources>
+</configuration>
+</execution>
+</executions>
+</plugin>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-compiler-plugin</artifactId>
+<inherited>true</inherited>
+<configuration>
+<optimize>true</optimize>
+<!--  Enable Java 17 for all sources so that Intellij picks the right language level  -->
+<source>17</source>
+<release>17</release>
+<compilerArgs>
+<arg>-parameters</arg>
+<arg>--add-opens=java.base/java.lang=ALL-UNNAMED</arg>
+<arg>--add-opens=java.base/java.util=ALL-UNNAMED</arg>
+</compilerArgs>
+</configuration>
+</plugin>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-surefire-plugin</artifactId>
+<configuration>
+<argLine>--add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED</argLine>
+</configuration>
+</plugin>
+</plugins>
+</build>
+</profile>
+<profile>
+<id>errorprone</id>
+<build>
+<plugins>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-compiler-plugin</artifactId>
+<configuration>
+<compilerArgs>
+<arg>-XDcompilePolicy=simple</arg>
+<arg>
+-Xplugin:ErrorProne
+<!-- 
+                  Disable all checks in test code. Bugs in tests can hide runtime failures,
+                  however these can be enabled later on. Many issues may require sub-optional
+                  code to reproduce failures.
+                   -->
+-XepExcludedPaths:.*/src/test/java/.*
+<!--  ###############  -->
+<!--  UPGRADED CHECKS  -->
+<!--  ###############  -->
+<!--  Boxed primitive equality checks can be dangerous when presented with unexpected inputs  -->
+-Xep:BoxedPrimitiveEquality:ERROR
+<!--  ###############  -->
+<!--  DISABLED CHECKS  -->
+<!--  ###############  -->
+<!--  UnusedVariable is great at catching mistakes quickly, but
+                  requires a few suppressions to avoid noise. Deferring to avoid noise
+                  with the introduction of ErrorProne.  -->
+-Xep:UnusedVariable:OFF
+<!-- 
+                  Disabled to avoid potential API changes. It's not clear if custom JsonNode types
+                  exist, and if any do implement equals without hashCode, it's likely they cause bugs.
+                  I plan to try fixing this separately.
+                   -->
+-Xep:EqualsHashCode:OFF
+<!--  Style: javadoc tag validation  -->
+-Xep:MissingSummary:OFF -Xep:InvalidInlineTag:OFF -Xep:EmptyBlockTag:OFF -Xep:AlmostJavadoc:OFF -Xep:InvalidLink:OFF
+<!--  Style: low reward for enabling.  -->
+-Xep:UnnecessaryParentheses:OFF
+<!--  Style: low signal  -->
+-Xep:InconsistentCapitalization:OFF
+<!--  Style: requires specific comments when switch branches neither break nor return  -->
+-Xep:FallThrough:OFF
+<!--  Style: disable noisy check for importing common names from nested classes  -->
+-Xep:BadImport:OFF
+<!--  Style: requires a default case when not all cases are handled  -->
+-Xep:MissingCasesInEnumSwitch:OFF
+<!--  Style: avoid clashes with java.lang. Possibly worth enabling, but this can be done later  -->
+-Xep:JavaLangClash:OFF
+<!--  These can likely be updated from protected to private, but it's relatively low signal  -->
+-Xep:ProtectedMembersInFinalClass:OFF
+<!--  These can likely be updated from public to protected, but it's relatively low signal  -->
+-Xep:PublicConstructorForAbstractClass:OFF
+<!--  jackson-databind doesn't have a logger, in many cases there's no way to pre-validate inputs  -->
+-Xep:EmptyCatch:OFF -Xep:EqualsGetClass:OFF
+<!--  Noisy check that's largely unnecessary unless the result is mutated.
+                  Returning only immutable collections requires additional overhead and
+                  impact must be carefully considered.  -->
+-Xep:MixedMutabilityReturnType:OFF
+<!--  Noisy in jackson and libraries which must interact with generics  -->
+-Xep:TypeParameterUnusedInFormals:OFF
+<!--  Check is noisy around code that's meant to handle types that are considered obsolete  -->
+-Xep:JdkObsolete:OFF
+<!--  Avoid noise from tests  -->
+-Xep:JUnit3FloatingPointComparisonWithoutDelta:OFF
+<!--  Disable the StringSplitter check because it requires a guava dependency  -->
+-Xep:StringSplitter:OFF
+<!--  Disable checks which require custom annotations  -->
+-Xep:AnnotateFormatMethod:OFF -Xep:GuardedBy:OFF
+<!--  This check is generally high signal, however it is noisy in
+                  low level projects which implement caches and interning.  -->
+-Xep:ReferenceEquality:OFF
+</arg>
+</compilerArgs>
+<annotationProcessorPaths>
+<path>
+<groupId>com.google.errorprone</groupId>
+<artifactId>error_prone_core</artifactId>
+<version>2.4.0</version>
+</path>
+</annotationProcessorPaths>
+<fork>true</fork>
+<useIncrementalCompilation>true</useIncrementalCompilation>
+</configuration>
+</plugin>
+</plugins>
+</build>
+</profile>
+</profiles>
 </project>
