@@ -35,6 +35,12 @@
 			<version>${sikuli.usedversion}</version>
 		</dependency>
 
+		<dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>jdave-core</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
 
 	</dependencies>
 
